@@ -21,8 +21,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
                         <a class="nav-link active" href="{{url('/')}}">Home </a>
-                        <a class="nav-link" href="{{url('/pegawai')}}">Data Pegawai</a>
-                        <a class="nav-link" href="{{url('/about')}}">About</a>
+                                 <a class="nav-link" href="{{url('/employees')}}">Employees</a>
                       </div>
                     </div>
                 </div>

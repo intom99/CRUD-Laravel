@@ -10,9 +10,4 @@ class PagesController extends Controller
     {
         return view('index');
     }
-
-    public function about()
-    {
-        return view('about', ['nama' => 'Iin A R']);
-    }
 }

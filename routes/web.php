@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,20 +13,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('index');
-// });
-
-// Route::get('/about', function () {
-//     $nama = 'Iin A R';
-//     return view('about', ['nama' => $nama]);
-// });
 
 Route::get('/', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
 
-Route::get('/pegawai', 'PegawaiController@index');
+Route::get('/employees', 'EmployeesController@index');
+Route::get('/employees/create', 'EmployeesController@create');
+Route::get('/employees/{employee}', 'EmployeesController@show');
+Route::post('/employees', 'EmployeesController@store');
