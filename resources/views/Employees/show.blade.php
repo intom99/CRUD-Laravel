@@ -16,7 +16,11 @@
                       <p class="card-text">{{$employee->jabatan}}</p>
                      
                       <button type="submit" class="btn btn-primary">Edit</button>
-                      <button type="submit" class="btn btn-danger ml-3 mr-3">Delete</button>
+                      <form action="{{$employee->id}}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger ml-3 mr-3">Delete</button>
+                      </form>
                       <a href="/employees" class="card-link">Back</a>
                     </div>
                   </div>

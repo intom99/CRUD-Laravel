@@ -37,6 +37,12 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => 'required',
+            'nip' => 'required|size:9',
+            'email' => 'required',
+            'jabatan' => 'required'
+        ]);
 
         Employee::create($request->all());
 
@@ -85,6 +91,7 @@ class EmployeesController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        Employee::destroy($employee->id);
+        return redirect('/employees')->with('status', 'employee data deleted successfully');
     }
 }
