@@ -9,6 +9,12 @@
                   <h1 class="mt-3 mb-3">Employees List</h1>
                   <a href="/employees/create" class="btn btn-primary my-3"> Create</a>
 
+                  @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
                                   
                   <ul class="list-group">
                       @foreach( $employees as $row)
