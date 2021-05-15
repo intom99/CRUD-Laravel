@@ -80,6 +80,13 @@ class EmployeesController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
+        $request->validate([
+            'nama' => 'required',
+            'nip' => 'required|size:9',
+            'email' => 'required',
+            'jabatan' => 'required'
+        ]);
+
         Employee::where('id', $employee->id)
             ->update([
                 'nama' => $request->nama,
