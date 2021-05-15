@@ -68,7 +68,7 @@ class EmployeesController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employees.edit', compact('employee'));
     }
 
     /**
@@ -80,7 +80,15 @@ class EmployeesController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        Employee::where('id', $employee->id)
+            ->update([
+                'nama' => $request->nama,
+                'nip' => $request->nip,
+                'email' => $request->email,
+                'jabatan' => $request->jabatan,
+
+            ]);
+        return redirect('/employees')->with('status', 'employee data updated successfully');
     }
 
     /**
